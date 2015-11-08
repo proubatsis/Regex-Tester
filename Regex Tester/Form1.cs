@@ -20,19 +20,30 @@ namespace Regex_Tester
 
         private void matchButton_Click(object sender, EventArgs e)
         {
-            Match match = Regex.Match(inputTextBox.Text, patternTextBox.Text);
+            MatchCollection matches = Regex.Matches(inputTextBox.Text, patternTextBox.Text);
 
             matchedListView.Items.Clear();
-            if(match.Success)
+
+            for(int i = 0; i < matches.Count; i++)
             {
-                
+                String[] row = { (i + 1).ToString(), "", "" };
+                matchedListView.Items.Add(new ListViewItem(row));
+                showGroups(matches[i]);
+            }
+
+        }
+
+        public void showGroups(Match match)
+        {
+            if (match.Success)
+            {
+
                 for (int i = 1; i < match.Groups.Count; i++)
                 {
-                    String[] row = { i.ToString(), match.Groups[i].Value };
+                    String[] row = {"", i.ToString(), match.Groups[i].Value };
                     matchedListView.Items.Add(new ListViewItem(row));
                 }
             }
-
         }
 
     }

@@ -36,6 +36,7 @@
             this.groupHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.valueHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.matchButton = new System.Windows.Forms.Button();
+            this.matchHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // inputLabel
@@ -73,6 +74,7 @@
             // matchedListView
             // 
             this.matchedListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.matchHeader,
             this.groupHeader,
             this.valueHeader});
             this.matchedListView.Location = new System.Drawing.Point(17, 115);
@@ -85,12 +87,12 @@
             // groupHeader
             // 
             this.groupHeader.Text = "Group";
-            this.groupHeader.Width = 105;
+            this.groupHeader.Width = 75;
             // 
             // valueHeader
             // 
             this.valueHeader.Text = "Value";
-            this.valueHeader.Width = 401;
+            this.valueHeader.Width = 359;
             // 
             // matchButton
             // 
@@ -101,6 +103,11 @@
             this.matchButton.Text = "Regex.Match()";
             this.matchButton.UseVisualStyleBackColor = true;
             this.matchButton.Click += new System.EventHandler(this.matchButton_Click);
+            // 
+            // matchHeader
+            // 
+            this.matchHeader.Text = "Match #";
+            this.matchHeader.Width = 83;
             // 
             // Form1
             // 
@@ -115,7 +122,7 @@
             this.Controls.Add(this.inputLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Regex Tester";
@@ -134,6 +141,7 @@
         private System.Windows.Forms.ColumnHeader groupHeader;
         private System.Windows.Forms.ColumnHeader valueHeader;
         private System.Windows.Forms.Button matchButton;
+        private System.Windows.Forms.ColumnHeader matchHeader;
     }
 }
 
